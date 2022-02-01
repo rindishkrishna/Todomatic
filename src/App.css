@@ -47,12 +47,3 @@
     font-size: x-large;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2)
 }
-.items{
-    display: flex;
-    flex-direction: row;
-}
-.buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}

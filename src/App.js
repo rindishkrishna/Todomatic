@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { v4 as uuidv4 } from 'uuid';
-
+import Items from './Components/Items'
 function App() {
   const [text,setText]=useState("");
   const [items,setItem]=useState([
@@ -78,19 +78,14 @@ function App() {
           })
           .map((x)=>{
             return(
-              <div key={x.text}>
-              <div className="items">
-              <input type="checkbox" checked={!x.active} onClick={()=>changeTaskStatus(x.id)}/>
-              <div>{x.text}</div> 
-            </div>
-            <div className="buttons"> 
-            <button className="btn"
-            onClick={()=>deleteItem(x.id)}
-            >Delete</button>
-            </div>
-            <hr/>
-            </div>
-           
+              <Items
+              key={x.id}
+              id={x.id}
+              text={x.text}
+              checked={!x.active}
+              changeTaskStatus={changeTaskStatus}
+              deleteItem={deleteItem}
+              />
             )
           })}
 
